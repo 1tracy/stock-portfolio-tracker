@@ -111,27 +111,6 @@ symbol  | units | cost     |   latest_price | book_value  |   market_value | gai
 AAPL    | 1000  | 123.56   |   156.23       | 12356       |   15623        | 3267      |   0.264
 AMZN    | 20    | 2001.1   |   1478.19      | 40022       |   29563        | -10459    |   -0.261
 
-
-## Testing
-
-Testing against third-party services can be challenging as they are out of our
-control. As developers, we must build our application with the expectation of
-specific behaviours from these services. Mocks (faking) are a handy way to
-isolate the dependency and replace it with a constant to which we can build
-tests. For this, we will use the `requests-mock` library to stub out
-HTTP requests.
-
-https://requests-mock.readthedocs.io/en/latest/pytest.html
-
-Install using `pip install requests-mock`.
-
-As for writing files, use the `tmp_path` fixture that ships with pytest to
-write to temporary locations on the disk.
-
-**Make sure to update `requirements.txt`** and include any libraries required
-to build this project (e.g. `requests`, `requests-mock`) so they are available
-to Travis CI.
-
 ## Packaging
 
 As described above, provide a `setup.py` configuration to package your
